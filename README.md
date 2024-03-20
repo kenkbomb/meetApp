@@ -19,3 +19,5 @@ React, Javascript, GH-Pages
 +as a USER, I should be able to VIEW GRAPHICAL CHARTS AND GRAPHS DESCRIBING VARIOUS DATA REGARDING EVENTS, in order to BETTER UNDERSTAND THE INFORMATION AT A GLANCE
 
 +as a USER, I should be able to FIND AND START THE APP VIA A MENU ICON ON MY DEVICE OF CHOICE, in order to EASILY AND CONVENIENTLY RUN THE APP 
+
+Serverless functions will be used to interact between the meet app and the separate services and apis needed in order to run the app properly. Such as googleOAuth, which will provide an access key to the protected api. The google calendar api itself, which will provide the necessary data needed to view and manage locations and events in the app.
