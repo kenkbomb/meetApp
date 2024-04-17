@@ -5,10 +5,12 @@ import userEvent from "@testing-library/user-event";
 describe('<NumberOfEvents /> component',()=>
 {
     let NumberOfEventsComponent;
+//let user;
 
     beforeEach(()=>
     {
-        NumberOfEventsComponent = render(<NumberOfEvents/>);
+       // user = userEvent.setup();
+        NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => { }} />);
     })
 
     test('tests if an element with a role of textbox is present',()=>{
@@ -21,9 +23,9 @@ describe('<NumberOfEvents /> component',()=>
     test('number of events updates correctly when user types in the textbox', async()=>
     {
         let component = NumberOfEventsComponent.queryByRole('textbox');
-        let user = userEvent.setup();
-        await user.type(component,'{backspace}{backspace}10');
-        expect(component).toHaveValue('10');
+        const user = userEvent.setup();
+        await user.type(component,"{backspace}{backspace}10");
+        expect(component.value).toBe('10');
 
     })
 
