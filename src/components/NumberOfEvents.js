@@ -16,7 +16,7 @@ export const NumberOfEvents=({setCurrentNOE})=>
 
     return(
         <div id = 'number-of-events'>
-            <input type="text" value={noe} id="numberEventsInput" className="numberEventsInput" onChange={handleInputChanged} defaultValue={32}></input>
+            <input type="text" value={noe} id="numberEventsInput"  className="numberEventsInput" onChange={handleInputChanged} defaultValue={32}></input>
         </div>
     )
 }
