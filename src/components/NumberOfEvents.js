@@ -1,6 +1,6 @@
 import { useState } from "react";
 //import {fetchData} from "./api.js"
-export const NumberOfEvents=({setCurrentNOE})=>
+export const NumberOfEvents=({setCurrentNOE,setErrorAlert})=>
 {
  
  const [noe,setnoe] = useState('32');
@@ -8,9 +8,18 @@ export const NumberOfEvents=({setCurrentNOE})=>
     const handleInputChanged =(event)=>
     {
         const num = event.target.value;
+        if(isNaN(num))
+            {
+                setErrorAlert(" non alphanumeric and negative numbers are NOT allowed")
+                //console.log("not a valid value or number, please rephrase...")
+            }
+            else{
         setCurrentNOE(num);
         setnoe(num);
         console.log("number is " + num);
+        setErrorAlert("");
+            }
+       
         
     }
 
