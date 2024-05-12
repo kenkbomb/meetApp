@@ -25,6 +25,7 @@ export const NumberOfEvents=({setCurrentNOE,setErrorAlert})=>
 
     return(
         <div id = 'number-of-events'>
+            <p>Number of Events</p>
             <input type="text" value={noe} id="numberEventsInput"  className="numberEventsInput" onChange={handleInputChanged} defaultValue={32}></input>
         </div>
     )
