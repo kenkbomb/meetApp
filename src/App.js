@@ -6,6 +6,7 @@ import { NumberOfEvents } from './components/NumberOfEvents';
 import './App.css';
 import { useState,useEffect } from 'react';
 import { InfoAlert,ErrorAlert,WarningAlert } from './components/alert';
+import CityEventsChart from './components/cityEventsChart';
 
 
 
@@ -44,9 +45,11 @@ useEffect(() => {
         {errorAlert.length ? <ErrorAlert text = {errorAlert}/> :null}
         {warningAlert.length ? <WarningAlert text = {warningAlert}/> : null}
       </div>
+
       <CitySearch allLocations={allLocations} setInfoAlert={setInfoAlert} setCurrentCity={setCurrentCity} />
       <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} /> 
       
+      <CityEventsChart allLocations={allLocations} events={events} />
       
       <EventList events={events}/>
     
