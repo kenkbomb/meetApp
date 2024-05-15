@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from 'recharts';
+import React from 'react';
+import { PieChart, Pie, ResponsiveContainer } from 'recharts';
 import { useState,useEffect } from 'react';
 const EventsGenresChart =({events})=>
     {

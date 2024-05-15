@@ -19,6 +19,8 @@ const [currentCity, setCurrentCity] = useState("See all cities");
 const [infoAlert,setInfoAlert] = useState("");
 const [errorAlert,setErrorAlert] = useState("");
 const [warningAlert,setWarningAlert] = useState("");
+const [isLoaded,setIsLoaded] = useState(false);
+const [waitMessage,setWaitMessage] = useState("PLEASE WAIT, LOADING EVENTS...");
 const fetchData = async () => {
   const allEvents = await getEvents();
   const filteredEvents = currentCity === "See all cities" ?
@@ -26,9 +28,14 @@ const fetchData = async () => {
     allEvents.filter(event => event.location === currentCity)
   setEvents(filteredEvents.slice(0, currentNOE));
   setAllLocations(extractLocations(allEvents));
+  setIsLoaded(true);
 }
 
 useEffect(() => {
+  if(isLoaded)
+    {
+      setWaitMessage("please choose a number of events to view above");
+    }
   if(navigator.onLine)
     {
       setWarningAlert("");
@@ -53,7 +60,7 @@ useEffect(() => {
         <EventsGenresChart events={events} />
         <CityEventsChart allLocations={allLocations} events={events} />
       </div>
-      <EventList events={events}/>
+      {events.length ? <EventList events={events}/>:<p>{waitMessage}</p>  }
     
     </div>
   );
