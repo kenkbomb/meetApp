@@ -46,12 +46,12 @@ useEffect(() => {
         {errorAlert.length ? <ErrorAlert text = {errorAlert}/> :null}
         {warningAlert.length ? <WarningAlert text = {warningAlert}/> : null}
       </div>
-
+      <p className='headerTitle'>MeetApp</p>
       <CitySearch allLocations={allLocations} setInfoAlert={setInfoAlert} setCurrentCity={setCurrentCity} />
       <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} /> 
       <div className='charts-container'>
-      <EventsGenresChart events={events} />
-      <CityEventsChart allLocations={allLocations} events={events} />
+        <EventsGenresChart events={events} />
+        <CityEventsChart allLocations={allLocations} events={events} />
       </div>
       <EventList events={events}/>
     
