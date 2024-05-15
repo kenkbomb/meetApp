@@ -91,7 +91,7 @@ input[type="number"] {
 }
 .headerTitle{
   font-size: 0.8rem;
-  background-color:rgba(158, 158, 156, 0.534);
+  background-color:#8a8a8b5e;
   border-radius: 5px;
 }
 .charts-container{

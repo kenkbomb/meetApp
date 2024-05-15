@@ -56,10 +56,10 @@ useEffect(() => {
       <p className='headerTitle'>MeetApp</p>
       <CitySearch allLocations={allLocations} setInfoAlert={setInfoAlert} setCurrentCity={setCurrentCity} />
       <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} /> 
-      <div className='charts-container'>
+      {events.length ? <div className='charts-container'>
         <EventsGenresChart events={events} />
         <CityEventsChart allLocations={allLocations} events={events} />
-      </div>
+      </div>:<></>}
       {events.length ? <EventList events={events}/>:<p>{waitMessage}</p>  }
     
     </div>
